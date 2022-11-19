@@ -3,14 +3,11 @@ kind: Job
 metadata:
   name: myapp-build
 spec:
-  ttlSecondsAfterFinished: 60
+  ttlSecondsAfterFinished: 30
   template:
     spec:
       restartPolicy: Never
       containers:
       - name: build
-        image: busybox:latest
-        command:
-          - sh
-          - -c
-          - echo "building...DONE"
+        image: rancher/kubectl:v1.23.7
+        command: ["kubectl", "patch", "cm", "myapp-substitutions", "-p", "$\"data:\n BUILD_DATE: $(date)\""]
