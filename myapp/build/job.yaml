@@ -11,7 +11,7 @@ spec:
       containers:
       - name: build
         image: bitnami/kubectl:1.24.8
-        entrypoint: /bin/bash
         command:
+          - bash
           - -c
           - "kubectl patch cm myapp-substitutions -p {\"data\": {\"BUILD_TIME\": \"$(date)\"}}"
