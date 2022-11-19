@@ -10,5 +10,8 @@ spec:
       restartPolicy: Never
       containers:
       - name: build
-        image: rancher/kubectl:v1.23.7
-        command: ["kubectl", "patch", "cm", "myapp-substitutions", "-p", "{\"data\": {\"BUILD_TIME\": \"$(date)\"}}"]
+        image: bitnami/kubectl:1.24.8
+        entrypoint: /bin/bash
+        command:
+          - -c
+          - "kubectl patch cm myapp-substitutions -p {\"data\": {\"BUILD_TIME\": \"$(date)\"}}"
