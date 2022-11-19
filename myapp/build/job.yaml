@@ -6,6 +6,7 @@ spec:
   ttlSecondsAfterFinished: 30
   template:
     spec:
+      serviceAccountName: myapp-build
       restartPolicy: Never
       containers:
       - name: build
