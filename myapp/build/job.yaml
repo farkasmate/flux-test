@@ -14,4 +14,4 @@ spec:
         command:
           - bash
           - -c
-          - "kubectl patch cm myapp-substitutions -p \"{\"data\": {\"BUILD_TIME\": \"$(date)\"}}\""
+          - 'kubectl patch cm myapp-substitutions -p "{\"data\": {\"BUILD_TIME\": \"$(date)\"}}"'
