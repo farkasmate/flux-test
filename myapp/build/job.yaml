@@ -11,4 +11,4 @@ spec:
       containers:
       - name: build
         image: rancher/kubectl:v1.23.7
-        command: ["kubectl", "patch", "cm", "myapp-substitutions", "-p", "$\"data:\n BUILD_DATE: $(date)\""]
+        command: ["kubectl", "patch", "cm", "myapp-substitutions", "-p", "$\"data:\\n BUILD_DATE: $(date)\""]
