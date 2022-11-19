@@ -10,4 +10,6 @@ spec:
       - name: build
         image: busybox:latest
         command:
+          - sh
+          - -c
           - echo "building...DONE"
