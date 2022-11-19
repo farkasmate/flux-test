@@ -8,6 +8,11 @@ spec:
     - name: myapp-build
   interval: 1m0s
   path: ./myapp
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: myapp-substitutions
+        optional: true
   prune: true
   sourceRef:
     kind: GitRepository
