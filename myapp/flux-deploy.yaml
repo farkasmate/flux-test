@@ -6,6 +6,7 @@ metadata:
 spec:
   dependsOn:
     - name: myapp-build
+  force: true
   interval: 1m0s
   path: ./myapp
   postBuild:
