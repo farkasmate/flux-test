@@ -12,7 +12,7 @@ spec:
     substituteFrom:
       - kind: ConfigMap
         name: myapp-substitutions
-        optional: true
+        optional: false
   prune: true
   sourceRef:
     kind: GitRepository
