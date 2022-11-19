@@ -4,6 +4,8 @@ metadata:
   name: myapp
   namespace: default
 spec:
+  dependsOn:
+    - name: myapp-build
   interval: 1m0s
   path: ./myapp
   prune: true
@@ -11,3 +13,4 @@ spec:
     kind: GitRepository
     name: self
   targetNamespace: default
+  wait: true

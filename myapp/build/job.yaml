@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: myapp-build
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: build
+        image: busybox:latest
+        command:
+          - echo "building...DONE"

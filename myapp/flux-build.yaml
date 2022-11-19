@@ -1,0 +1,15 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: myapp-build
+  namespace: default
+spec:
+  interval: 1m0s
+  force: true
+  path: ./myapp/build
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: self
+  targetNamespace: default
+  wait: true
