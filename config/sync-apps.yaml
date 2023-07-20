@@ -1,0 +1,24 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: flux-test
+spec:
+  interval: 1m
+  ref:
+    branch: master
+  url: https://github.com/farkasmate/flux-test
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: apps
+spec:
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: flux-test
+  path: ./config/apps
+  prune: true
+  wait: true
+  targetNamespace: default
